@@ -30,5 +30,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_20_150701) do
     t.integer "offset_x"
     t.integer "offset_y"
   end
-
 end

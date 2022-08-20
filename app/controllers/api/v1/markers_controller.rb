@@ -14,5 +14,4 @@ class Api::V1::MarkersController < ApplicationController
   def marker_params
     params.require(:marker).permit(:pageX, :pageY, :name)
   end
-
 end
