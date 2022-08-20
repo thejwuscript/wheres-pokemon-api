@@ -9,4 +9,11 @@ class Api::V1::MarkersController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def marker_params
+    params.require(:marker).permit(:clientX, :clientY, :scrollX, :scrollY, :name)
+  end
+  
 end
