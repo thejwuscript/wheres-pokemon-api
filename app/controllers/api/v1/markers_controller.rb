@@ -11,10 +11,8 @@ class Api::V1::MarkersController < ApplicationController
     all_pokemon = Pokemon.all
     result = all_pokemon.any? { |pokemon| pokemon.found?(x.to_i, y.to_i, pokemon_name) }
     if result
-      puts "You've found #{pokemon_name}!"
       render json: { message: "You've found #{pokemon_name}!", position: { x: x, y: y } }, status: :ok
     else
-      puts "Sorry, no dice."
       render json: { message: "Sorry, no dice." }
     end
   end
