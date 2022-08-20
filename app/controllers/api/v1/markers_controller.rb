@@ -3,7 +3,6 @@ class Api::V1::MarkersController < ApplicationController
   end
 
   def create
-    puts params
     render json: { message: 'No marker data provided' }, status: 400 unless params[:marker]
   end
 
@@ -13,7 +12,7 @@ class Api::V1::MarkersController < ApplicationController
   private
 
   def marker_params
-    params.require(:marker).permit(:clientX, :clientY, :scrollX, :scrollY, :name)
+    params.require(:marker).permit(:pageX, :pageY, :name)
   end
-  
+
 end
