@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_20_150701) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_22_173417) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,4 +30,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_20_150701) do
     t.integer "offset_x"
     t.integer "offset_y"
   end
+
+  create_table "rankings", force: :cascade do |t|
+    t.string "name"
+    t.string "duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "timers", force: :cascade do |t|
+    t.time "start_time"
+    t.time "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
