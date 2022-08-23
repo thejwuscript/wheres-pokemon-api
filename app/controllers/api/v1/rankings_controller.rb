@@ -1,11 +1,12 @@
 class Api::V1::RankingsController < ApplicationController
   def index
     rankings = Ranking.all
-    sorted = rankings.includes(:timer).sort_by do |ranking|
-      start = ranking.timer.start_time
-      finish = ranking.timer.end_time
-      finish - start
-    end
+    # sorted = rankings.includes(:timer).sort_by do |ranking|
+    #   start = ranking.timer.start_time
+    #   finish = ranking.timer.end_time
+    #   finish - start
+    # end
+    sorted = rankings.order(:duration)
     render json: sorted
   end
 
